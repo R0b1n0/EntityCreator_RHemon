@@ -13,7 +13,6 @@ namespace GridAttribute
 
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
-            EditorGUI.DrawRect(position, new Color(0, 1, 0, 0.2f));
             if (property.type != typeof(GridList<>).Name)
             {
                 EditorGUI.LabelField(position, "GridAttribute only works with GridList<T>.");
@@ -107,15 +106,10 @@ namespace GridAttribute
                 {
                     float structHeight = 0;
 
-                    // Parcourir toutes les sous-propriétés de la structure
                     SerializedProperty iterator = content.Copy();
                     SerializedProperty endProperty = iterator.GetEndProperty();
 
                     while (iterator.NextVisible(true) && !SerializedProperty.EqualContents(iterator, endProperty))
-                    {
-                        structHeight += EditorGUI.GetPropertyHeight(iterator, true);
-                    }
-                    foreach (FieldInfo field in content.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance))
                     {
                         structHeight += EditorGUI.GetPropertyHeight(iterator, true);
                     }

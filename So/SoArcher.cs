@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 [CreateAssetMenu(menuName = "Entities/Archer", fileName = "Archer")]
 public class SoArcher : SoEntity
@@ -17,6 +16,7 @@ public struct AttackStats
 {
     public int m_dammage;
     public AttackEffect m_effect;
+    private int testValue;
 }
 
 public enum AttackEffect
