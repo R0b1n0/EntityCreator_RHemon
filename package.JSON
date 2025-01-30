@@ -2,7 +2,7 @@
   "name" : "com.robin-corp.entitygen",
   "version": "1.0.0",
   "displayName": "Entity Generator",
-  "description": "Allows you to create entity and use grid attribute",
+  "description": "Contains a tool to create instances of scriptable objects inheriting from SoEntity. Allow you to use a GridAttribute.",
   "unity": "2022.3",
   "unityRelease": "0b5",
 
