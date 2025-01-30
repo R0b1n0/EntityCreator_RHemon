@@ -6,10 +6,6 @@
   "unity": "2022.3",
   "unityRelease": "0b5",
 
-"dependencies": {
-  "com.tonpackage.nom": "https://github.com/R0b1n0/EntityCreator_RHemon.git"
-},
-
   "author": {
     "name": "RobinHemon"
   }
