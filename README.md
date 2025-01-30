@@ -4,6 +4,7 @@
 
 ***Présentation:***
 Le tool générateur d’entité permet de modifier et sauvegarder des instances de scriptableObject dérivant de SoEntity. 
+
 ***Contenu du package:***
 - Class EntityCreatorWindow, affiche le tool 
 - SoEntity, hérite de scriptable object
@@ -18,6 +19,7 @@ Le bouton save entity permet d’enregistrer une instance du scriptable object �
 
 ***Présentation:***
 Grid Attribute permet d'afficher les éléments d'une liste sous forme de grille dans l'inspecteur.
+
 ***Contenu du package:***
 - GridContent  : structure générique composée d’un vector2int, sa valeur représente la position relative de l’élément à l’angle supérieur gauche de la grille. Il contient également un field générique que l’user doit renseigner (l’objet passé doit être serializable).
 - GridList : class générique contenant une list de GridContent.
