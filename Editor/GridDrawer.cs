@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Robino.GridAttribute
+namespace Robino.GridAtt
 {
     [CustomPropertyDrawer(typeof(GridAttribute))]
     public class GridDrawer : PropertyDrawer

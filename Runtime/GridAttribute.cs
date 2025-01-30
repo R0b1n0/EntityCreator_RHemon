@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Robino.GridAttribute
+namespace Robino.GridAtt
 {
     [AttributeUsage(AttributeTargets.Field)]
     public class GridAttribute : PropertyAttribute
