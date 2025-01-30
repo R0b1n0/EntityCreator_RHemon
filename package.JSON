@@ -1,5 +1,5 @@
 {
-  "name": "com.robin-corp.entitygen",
+  "name" : "com.robin-corp.entitygen",
   "version": "1.0.0",
   "displayName": "Entity Generator",
   "description": "Allows you to create entity and use grid attribute",
@@ -8,7 +8,7 @@
 
 "dependencies": {
   "com.tonpackage.nom": "https://github.com/R0b1n0/EntityCreator_RHemon.git"
-}
+},
 
   "author": {
     "name": "RobinHemon"
