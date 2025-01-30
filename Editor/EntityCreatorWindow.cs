@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace EntityGeneratorTool
+namespace Robino.EntityGeneratorTool
 {
     public class EntityCreatorWindow : EditorWindow
     {

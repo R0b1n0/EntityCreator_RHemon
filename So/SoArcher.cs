@@ -1,14 +1,15 @@
 using System;
 using UnityEngine;
+
 [CreateAssetMenu(menuName = "Entities/Archer", fileName = "Archer")]
 public class SoArcher : SoEntity
 {
     public int arrowCount;
     private int LittlePrivateIntValue;
 
-    [GridAttribute.Grid(7)]
+    [Robino.GridAttribute.Grid(7)]
     [SerializeField]
-    public GridAttribute.GridList<AttackStats> m_attackPatern;
+    public Robino.GridAttribute.GridList<AttackStats> m_attackPatern;
 }
 
 [Serializable]

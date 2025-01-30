@@ -1,11 +1,7 @@
-using System.Collections.Generic;
-using System.Reflection;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using static Codice.CM.WorkspaceServer.WorkspaceTreeDataStore;
 
-namespace GridAttribute
+namespace Robino.GridAttribute
 {
     [CustomPropertyDrawer(typeof(GridAttribute))]
     public class GridDrawer : PropertyDrawer
