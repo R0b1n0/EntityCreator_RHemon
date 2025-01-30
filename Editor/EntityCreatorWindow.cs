@@ -17,9 +17,6 @@ namespace EntityGeneratorTool
 
         int m_selectedTypeIndex;
 
-        
-
-        //call la méthode show vindow dps l'editeur 
         [MenuItem("EntityGenerator/EntGenWindow")]
         public static void ShowWindow()
         {
@@ -128,24 +125,15 @@ namespace EntityGeneratorTool
 
             if (!string.IsNullOrEmpty(path))
             {
-                AssetDatabase.CreateAsset(m_entityWrapper.targetObject, path); // Sauvegarder l'instance en tant qu'asset
+                AssetDatabase.CreateAsset(m_entityWrapper.targetObject, path);
                 AssetDatabase.SaveAssets();
                 AssetDatabase.Refresh();
 
-                EditorUtility.FocusProjectWindow();
                 Selection.activeObject = m_entityWrapper.targetObject;
 
-                // Réinitialiser les variables
                 m_entityWrapper = null;
             }
         }
     }
 }
 
-[System.Serializable]
-public struct CellData
-{
-    public string name;
-    public int value;
-    public Color color;
-}
