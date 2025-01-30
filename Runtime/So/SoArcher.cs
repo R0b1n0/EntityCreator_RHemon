@@ -7,9 +7,9 @@ public class SoArcher : SoEntity
     public int arrowCount;
     private int LittlePrivateIntValue;
 
-    [Robino.GridAttribute.Grid(7)]
+    [Robino.GridAtt.Grid(7)]
     [SerializeField]
-    public Robino.GridAttribute.GridList<AttackStats> m_attackPatern;
+    public Robino.GridAtt.GridList<AttackStats> m_attackPatern;
 }
 
 [Serializable]
