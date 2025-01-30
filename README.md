@@ -31,5 +31,5 @@ Grid Attribute permet d'afficher les éléments d'une liste sous forme de grille
 ***Fonctionnement:***
 
 L'utilisateur définit la taille de la grille (5par défaut) et le type serializable qu'il veut utiliser. 
-Dans l'éditeur, la grille s'affiche et l'utilisateur peut sélectionner une case en cliquant dessus, si l'élément rangé dans cet emplacement à déjà une valeur, les propriétés serializable de cet élément saffiche sous la grille et l'user peut modifier ses champs, ssinon, un bouton "Add Element" s'affiche pour ajouter un élément à cet emplacement.
+Dans l'éditeur, la grille s'affiche et l'utilisateur peut sélectionner une case en cliquant dessus, si l'élément rangé dans cet emplacement à déjà une valeur, les propriétés serializable de cet élément saffiche sous la grille et l'user peut modifier ses champs, sinon, un bouton "Add Element" s'affiche pour ajouter un élément à cet emplacement.
 Si l'utilisateur réduit la taille de la grille après avoir ajouté des éléments, les éléments existants tombant hors des limites de la grille seront supprimés.
