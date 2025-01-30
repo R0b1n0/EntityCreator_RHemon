@@ -1,16 +1,12 @@
 {
-  "name": "com.robino-corp.entitygen",
+  "name": "com.robin-corp.entitygen",
   "version": "1.0.0",
-  "displayName": "Package Example",
+  "displayName": "Entity Generator",
   "description": "Allows you to create entity and use grid attribute",
   "unity": "2022.3",
   "unityRelease": "0b5",
 
-  "documentationUrl": "https://example.com/",
-  "changelogUrl": "https://example.com/changelog.html",
-  "licensesUrl": "https://example.com/licensing.html",
-  
   "author": {
-    "name": "Robino"
+    "name": "RobinHemon"
   }
 }
