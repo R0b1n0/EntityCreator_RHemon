@@ -1,6 +1,9 @@
+using System.Collections.Generic;
 using System.Reflection;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using static Codice.CM.WorkspaceServer.WorkspaceTreeDataStore;
 
 namespace GridAttribute
 {
@@ -28,7 +31,9 @@ namespace GridAttribute
             int gridSize = gridAttribute.m_gridCount;
 
             m_contentList = property.FindPropertyRelative("m_gridContent");
-            
+
+            TrimList(gridSize);
+
             Rect gridRect = new Rect(position.x, position.y, position.width, cellSize * gridSize);
             position.y += cellSize * gridSize;
 
@@ -72,7 +77,7 @@ namespace GridAttribute
                 Rect editRect = new Rect(position.x, position.y, position.width, EditorGUIUtility.singleLineHeight);
                 position.y += EditorGUIUtility.singleLineHeight;
 
-                if (m_selectedRow >= 0 && m_selectedCol >= 0 && GUI.Button(editRect, "Edit That Shit", new GUIStyle(GUI.skin.button)))
+                if (m_selectedRow >= 0 && m_selectedCol >= 0 && GUI.Button(editRect, "Add Element", new GUIStyle(GUI.skin.button)))
                 {
                     AddElement();
                 }
@@ -87,9 +92,8 @@ namespace GridAttribute
                 EditorGUI.PropertyField(contentRect, valueProperty, new GUIContent(valueProperty.type.ToString()), true);
                 position.y += propertyHeight;
             }
-
-            
         }
+
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             GridAttribute gridAttribute = (GridAttribute)attribute;
@@ -122,18 +126,17 @@ namespace GridAttribute
                 }
             }
 
-
             return height;
         }
 
         private bool CellHasContent(int row, int column, out SerializedProperty content)
         {
-            Vector2 selectedTile = new Vector2(column, row);
+            Vector2Int selectedTile = new Vector2Int(column, row);
             for (int i = 0; i < m_contentList.arraySize; i++)
             {
                 SerializedProperty data = m_contentList.GetArrayElementAtIndex(i).FindPropertyRelative("m_position");
 
-                if (data.vector2Value == selectedTile)
+                if (data.vector2IntValue == selectedTile)
                 {
                     content = m_contentList.GetArrayElementAtIndex(i);
                     return true;
@@ -147,14 +150,30 @@ namespace GridAttribute
         private void AddElement()
         {
             m_contentList.InsertArrayElementAtIndex(m_contentList.arraySize);
-            //Debug.Log(m_contentList.arraySize);
+
             SerializedProperty element = m_contentList.GetArrayElementAtIndex(m_contentList.arraySize - 1);
 
             SerializedProperty valueProperty = element.FindPropertyRelative("m_value");
             SerializedProperty positionProperty = element.FindPropertyRelative("m_position");
 
             // Initialiser les valeurs
-            positionProperty.vector2Value = new Vector2(m_selectedCol, m_selectedRow);
+            positionProperty.vector2IntValue = new Vector2Int(m_selectedCol, m_selectedRow);
+        }
+
+        private void TrimList(int gridSize)
+        {
+            if (m_contentList.arraySize == 0)
+                return;
+
+            for (int i = 0; i < m_contentList.arraySize; i++)
+            {
+                SerializedProperty data = m_contentList.GetArrayElementAtIndex(i).FindPropertyRelative("m_position");
+
+                if (data.vector2IntValue.y >= gridSize || data.vector2IntValue.x >= gridSize)
+                {
+                    m_contentList.DeleteArrayElementAtIndex(i);
+                }
+            }
         }
     }
 

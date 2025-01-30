@@ -6,7 +6,7 @@ public class SoArcher : SoEntity
     public int arrowCount;
     private int LittlePrivateIntValue;
 
-    [GridAttribute.Grid(5)]
+    [GridAttribute.Grid(7)]
     [SerializeField]
     public GridAttribute.GridList<AttackStats> m_attackPatern;
 }

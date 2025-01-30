@@ -27,7 +27,7 @@ namespace GridAttribute
     public struct GridContent<T>
     {
         public T m_content;
-        public Vector2 m_position;
+        public Vector2Int m_position;
     }
 }
 
